@@ -39,7 +39,6 @@ var orm = {
   	});
   },
   create: function(table, columns, values, callback) {
-  	// var queryString = "INSERT INTO " + table + " (" + columns + ") VALUES (?)";    
         var queryString = "INSERT INTO " + table;
             queryString += " (";
             queryString += columns.toString();
@@ -48,15 +47,7 @@ var orm = {
             queryString += printQuestionMarks(values.length);
             queryString += ") ";
 
-
-        console.log('ORM Query String: Create');
-        console.log(queryString);
-        console.log('ORM columns');
-        console.log(columns);
-        console.log('ORM values');
-        console.log(values);
-
-    connection.query(queryString, function(error, result) {
+    connection.query(queryString, values, function(error, result) {
       if (error) {
         throw error;
       } 
@@ -65,6 +56,7 @@ var orm = {
       }
   	});
   },
+
   update: function(table, columnValues, condition, callback) {
   	var queryString = "UPDATE " + table + " SET ";
   		  queryString+= objectSQL(columnValues);
@@ -82,6 +74,7 @@ var orm = {
       }
   	});
   },
+  
   delete: function(table, condition, callback) {
   	var queryString = "DELETE FROM " + table + " WHERE " + condition;
     

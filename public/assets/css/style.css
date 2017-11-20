@@ -1,5 +1,10 @@
 body {
+}
+
+.imageholder {
+	height: 100%;
+	width: 100%;
     background-image: url('../img/Impossible-Burger.jpg');
-    background-size: 75%;
     background-repeat: no-repeat;
+	
 }

@@ -10,11 +10,6 @@ var burger = {
   //Variables columns and values are arrays.
   //We will be creating a burger object with a column of name and value of 'burger name'
   create: function(columns, values, callback) {
-    console.log('models columns');    
-    console.log(columns);
-    console.log('models values');    
-    console.log(values);
-    
     orm.create("burgers", columns, values, function(response) {
       callback(response);
     });
@@ -22,6 +17,11 @@ var burger = {
   //The columnValues portion of the url will be something like:
   //{name: Double Cheeseburger} and the condition will be {id: 'object ID'}
   update: function(columnValues, condition, callback) {
+    console.log('models columnValues');    
+    console.log(columnValues);
+    console.log('models condition');    
+    console.log(condition);
+    
     orm.update("burgers", columnValues, condition, function(response) {
       callback(response);
     });

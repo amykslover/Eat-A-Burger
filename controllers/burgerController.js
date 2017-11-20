@@ -9,22 +9,21 @@ var burger = require("../models/burgerModel.js");
 router.get("/", function(request, response) {
  
   burger.read(function(data) {
-    var burgersObject = {
+
+    var handlebarsObject = {
       burgers: data
     };
 
-    console.log(burgersObject);
-    response.render("index", burgersObject);
+    console.log(handlebarsObject);
+    response.render("index", handlebarsObject);
   });
+
 });
 
 
 
 router.post("/api/burgers", function(request, response) {
-  // console.log('Controller Request');
-  // console.log(request);
-  // console.log('Controller Response');
-  // console.log(response);
+
   burger.create(
     [
       "name"
@@ -42,30 +41,37 @@ router.post("/api/burgers", function(request, response) {
 
 router.put("/api/burgers/:id", function(request, response) {
   var condition = "id = " + request.params.id;
+  console.log("Controller Condition")
+  console.log(condition);
 
-  console.log("condition", condition);
-
-  burger.update({
+  burger.update(
+  {
     eaten: request.body.eaten
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
+  }, 
+
+  condition, 
+
+  function(result) {
+
+    if (result.affectedRows == 0) {
+      return response.status(404).end();
+    } 
+    else {
+      response.status(200).end();
     }
   });
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+router.delete("/api/burgers/:id", function(request, response) {
+  var condition = "id = " + request.params.id;
 
   burger.delete(condition, function(result) {
+    console.log(result)
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
-      return result.status(404).end();
+      return response.status(404).end();
     } else {
-      result.status(200).end();
+      response.status(200).end();
     }
   });
 });
