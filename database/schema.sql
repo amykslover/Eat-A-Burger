@@ -1,0 +1,9 @@
+CREATE DATABASE burgertime;
+USE burgertime;
+
+CREATE TABLE burgers (
+id INTEGER NOT NULL AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+eaten BOOLEAN DEFAULT false,
+PRIMARY KEY (id)
+);
