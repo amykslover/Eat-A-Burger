@@ -1,0 +1,50 @@
+<div class="wrapper imageholder">
+  <header class="header">
+	<h1>Create New Burgers and Eat Your Favorites!</h1>
+
+  </header>
+  <section class="content">
+    <div class="columns">
+      <main class="main">
+      <div class="whitebox">
+			<h2>BURGER CREATION</h2>
+			<div class="centerform">
+			<form class="create-form">
+			  <div class="form-group">
+			    <input type="text" id="burgeradd" name="name" placeholder="       Your Burger Name">
+			  </div>
+			  <button id="add" type="submit">BUILD A BURGER</button>
+			</form>
+			</div>
+		</div>
+
+      </main>
+      <aside class="sidebar-first">
+       <div class="whitebox">
+	<h2>BURGER MENU</h2>
+
+	<div class="burgerrow">
+  		{{#each burgers}}
+    	{{#unless eaten}}
+      	{{> burger/burger-block eaten=true}}
+    	{{/unless}}
+  		{{/each}}
+	</div>
+		</div>
+      </aside>
+      <aside class="sidebar-second">
+      <div class="whitebox">
+			<h2>BURGER HISTORY</h2>
+			
+		<div class="burgerrow">
+			  {{#each burgers}}
+			    {{#if eaten}}
+			      {{> burger/burger-block eaten=false}}
+			    {{/if}}
+			  {{/each}}
+		</div>
+		</div>
+      </aside>
+    </div>
+  </section>
+</div>
