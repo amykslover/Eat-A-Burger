@@ -1,10 +1,120 @@
-body {
+body{
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 18px;
+} 
+
+h1 {
+	margin-left: 30px;
 }
 
+h2 {
+	background: white;
+  	color: black;
+	padding: 10px 10px;
+	border: 2px solid black;
+}
+
+.itemlist {
+	padding: 10px;
+	align-items: left;
+	background: #E7EBE9;
+	border: solid darkgrey 1px;
+	margin-bottom: 5px;
+}
+#burgeradd {
+	width: 80%;
+	height: 35px;
+	margin-bottom: 30px;
+}
+
+#add {
+	width: 50%;
+	height: 30px;
+	margin-right: 4px;
+	border-radius: 4px !important;
+	padding: 5px 12px;
+	background-color: #008CBA;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.delete-burger{
+	float: left;
+	margin-right: 4px;
+	border-radius: 4px !important;
+	padding: 5px 12px;
+	background-color: #AB1408;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.change-eaten{
+	float: left;
+	margin-right: 10px;
+	border-radius: 4px !important;
+	padding: 5px 12px;
+	background-color: #137526;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.header {
+  height: 100px;
+  background: #112145;
+  color: #fff;
+}
+
+.footer {
+  height: 40px;
+  background: black;
+  color: #fff;
+}
 .imageholder {
 	height: 100%;
 	width: 100%;
-    background-image: url('../img/Impossible-Burger.jpg');
-    background-repeat: no-repeat;
-	
+    background-image: url('../img/Bacon-Cheeseburger.png');	
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  display: flex;
+  flex: 1;
+}
+.columns{
+  display: flex;
+  flex:1;
+}
+.main{
+  flex: 1;
+  order: 2;
+  padding: 30px;
+}
+
+.centerform {
+	text-align: center;
+}
+.sidebar-first{
+  width: 30%;
+  order: 1;
+  padding: 30px;
+
+}
+.sidebar-second{ 
+  width: 30%;
+  order: 3;
+  padding: 30px;
 }

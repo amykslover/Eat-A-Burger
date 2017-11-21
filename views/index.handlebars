@@ -1,43 +1,46 @@
-	<header>
-		
-	<h1>Burgers</h1>
-		
-	</header>
-	
-	<div class="imageholder">
+<div class="wrapper imageholder">
+  <header class="header">
+	<h1>Create New Burgers and Eat Your Favorites!</h1>
 
-	<h2>EAT A BURGER</h2>
+  </header>
+  <section class="content">
+    <div class="columns">
+      <main class="main">
+		<h2>BURGER CREATION</h2>
+		<div class="centerform">
+		<form class="create-form">
+		  <div class="form-group">
+		    <input type="text" id="burgeradd" name="name" placeholder="Add a burger name">
+		  </div>
+		  <button id="add" type="submit">BUILD A BURGER</button>
+		</form>
+		</div>
 
-	<ul>
-	  {{#each burgers}}
-	    {{#unless eaten}}
-	      {{> burger/burger-block eaten=true}}
-	    {{/unless}}
-	  {{/each}}
-	</ul>
+      </main>
+      <aside class="sidebar-first">
+	<h2>BURGER MENU</h2>
 
-
-	<h2>BURGERS EATEN</h2>
-	
-	<ul>
-	  {{#each burgers}}
-	    {{#if eaten}}
-	      {{> burger/burger-block eaten=false}}
-	    {{/if}}
-	  {{/each}}
-	</ul>
-
-
-
-	<h2>Add a Burger</h2>
-
-	<form class="create-form" action="/burgers/create" method="POST">
-	  <div class="form-group">
-	    <label for="burgeradd">Burger Name:</label>
-	    <input type="text" id="burgeradd" name="name">
-	  </div>
-	  <button type="submit">Add Burger</button>
-	</form>
-
-
+	<div class="burgerrow">
+  		{{#each burgers}}
+    	{{#unless eaten}}
+      	{{> burger/burger-block eaten=true}}
+    	{{/unless}}
+  		{{/each}}
 	</div>
+
+      </aside>
+      <aside class="sidebar-second">
+			<h2>BURGER HISTORY</h2>
+			
+		<div class="burgerrow">
+			  {{#each burgers}}
+			    {{#if eaten}}
+			      {{> burger/burger-block eaten=false}}
+			    {{/if}}
+			  {{/each}}
+		</div>
+
+      </aside>
+    </div>
+  </section>
+</div>
