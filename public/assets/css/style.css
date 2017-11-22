@@ -8,38 +8,34 @@ h1 {
 	margin-left: 30px;
 }
 
-.whitebox {
+/*.whitebox {
 	height: 60%;
 	background: white;
-	border: 2px solid black;
-	text-align: center;
-}
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
 
 h2 {
-	background: white;
-  	color: black;
-  	widows: 80%;
+	background: black;
+  	color: white;
 	padding: 10px 10px;
 }
 
 .itemlist {
-	width: 80%;
 	padding: 10px;
-	align-items: left;
-	text-align: left !important;
-	background: #E7EBE9;
-	border: solid darkgrey 1px;
-	margin-bottom: 5px;
+  	margin: 10px auto;
+	background-image: url('../img/white_wall.png');	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 #burgeradd {
 	width: 80%;
-	height: 35px;
 	margin-bottom: 30px;
+	height: 30px;
 }
 
 #add {
 	width: 50%;
-	height: 30px;
+	font-size: 15px;
 	margin-right: 4px;
 	border-radius: 4px !important;
 	padding: 5px 12px;
@@ -62,6 +58,7 @@ h2 {
 	text-align: center;
     text-decoration: none;
     display: inline-block;
+    height: 100%;
 }
 
 .change-eaten{
@@ -77,11 +74,10 @@ h2 {
     display: inline-block;
 }
 
-.header {
+/*.header {
   height: 100px;
-  background: #112145;
   color: #fff;
-}
+}*/
 
 .footer {
   height: 40px;
@@ -91,7 +87,7 @@ h2 {
 .imageholder {
 	height: 100%;
 	width: 100%;
-    background-image: url('../img/Bacon-Cheeseburger.png');	
+    background-image: url('../img/Impossible-Burger.jpg');	
 }
 
 .wrapper{
